@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, rgb(13, 72, 96) 30%, rgb(2, 6, 24) 70%);
+  animation: transitionIn 0.5s;
+  padding-top: 60px;
+}
+
+.navbar {
+  display: flex;
+  gap: 3.5rem;
+  height: 15vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  display: flex;
+  gap: 3.5rem;
+  list-style: none;
+}
+
+.nav-item a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item a::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  height: 0.1rem;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.5s;
+}
+
+.nav-item a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.mySlides {
+  position: relative;
+  text-align: center;
+}
+
+.mySlides img {
+  width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {font-size: 11px}
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateY(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .navlist {
+        flex-direction: row;
+        gap: 1rem;
+        height: auto;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(2, 6, 24, 0.9);
+        z-index: 10;
+        padding: 1rem 0;
+        justify-content: space-around;
+    }
+
+    .left-container {
+        width: 100%;
+        padding: 1rem;
+        padding-top: 15vh;
+    }
+
+    .right-container {
+        display: none;
+    }
+
+    .icons {
+        gap: 1.5rem;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+    .content {
+        margin: 1rem 1rem;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content .intro {
+        font-size: 1.2rem;
+    }
+
+    .content .detail {
+        font-size: 1rem;
+        max-width: 100%;
+        margin: 1rem 0;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn-container .btn {
+        width: 100%;
+        max-width: 20rem;
+    }
+
+    .design .circle {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="skillset.html">Skillset</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <img src="p1.png" alt="BlankPhoto.png" style="width:50rem; height:auto; align:center;">
+    <div class="text">Nuclear Power Plant Website</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="p2.png" alt="BlankPhoto.png" style="width:50rem; height:auto; align:center;">
+    <div class="text">UFO Game</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="p3.png" style="width:50rem; height:auto; align:center;">
+    <div class="text">Nuclear Power Plant Website (Post Feedback)</div>
+  </div>
+</div>
+<br>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000);
+}
+</script>
+
+</body>
+</html>
